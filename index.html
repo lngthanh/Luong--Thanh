@@ -15,6 +15,40 @@
 
 body {
     background: linear-gradient(135deg, #fff5f5, #ffecec);
+    overflow-x: hidden;
+}
+
+/* ⭐ BACKGROUND SAO */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.stars span {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: #e85d5d;
+    animation: move 10s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
 
 /* NAVBAR */
@@ -41,19 +75,19 @@ nav a {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 .hero img {
-    width: 180px;
-    height: 180px;
+    width: 220px;   /* 👈 to hơn */
+    height: 220px;
     border-radius: 50%;
     border: 6px solid #e85d5d;
     object-fit: cover;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     color: #c0392b;
     margin-top: 20px;
 }
@@ -69,9 +103,11 @@ nav a {
 }
 
 .hero p {
-    max-width: 700px;
-    margin: 20px auto;
-    color: #555;
+    max-width: 750px;
+    margin: 25px auto;
+    color: #444;
+    font-size: 18px;   /* 👈 to hơn */
+    line-height: 1.6;
 }
 
 /* SECTION */
@@ -83,7 +119,7 @@ nav a {
 .section h2 {
     color: #c0392b;
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 32px;
 }
 
 /* CARD */
@@ -91,13 +127,13 @@ nav a {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
 /* LIST */
@@ -113,8 +149,8 @@ li {
 /* ANIMATION */
 .hidden {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
 }
 
 .show {
@@ -134,12 +170,24 @@ footer {
 
 <body>
 
+<!-- ⭐ SAO -->
+<div class="stars">
+    <span style="left:10%; animation-duration:8s;"></span>
+    <span style="left:20%; animation-duration:12s;"></span>
+    <span style="left:35%; animation-duration:10s;"></span>
+    <span style="left:50%; animation-duration:7s;"></span>
+    <span style="left:65%; animation-duration:11s;"></span>
+    <span style="left:80%; animation-duration:9s;"></span>
+    <span style="left:90%; animation-duration:13s;"></span>
+</div>
+
+<!-- NAV -->
 <nav>
     <h1>THANH NGÂN.</h1>
     <div>
-        <a href="#about">Giới thiệu</a>
-        <a href="#exp">Kinh nghiệm</a>
+        <a href="#edu">Học vấn</a>
         <a href="#skills">Kỹ năng</a>
+        <a href="#exp">Kinh nghiệm</a>
     </div>
 </nav>
 
@@ -153,6 +201,29 @@ footer {
         để đóng góp vào việc nâng cao hình ảnh thương hiệu của công ty, tạo ra giá trị lâu dài 
         và gắn kết khách hàng với thương hiệu thông qua các nền tảng social media.
     </p>
+</div>
+
+<!-- HỌC VẤN -->
+<div class="section hidden" id="edu">
+    <h2>HỌC VẤN</h2>
+    <div class="card">
+        <p><b>Trường Đại học Ngoại Thương (2023 - 2027)</b></p>
+        <p>Sinh viên năm 2 chuyên ngành Tiếng Trung Thương Mại.</p>
+    </div>
+</div>
+
+<!-- KỸ NĂNG -->
+<div class="section hidden" id="skills">
+    <h2>KỸ NĂNG</h2>
+    <div class="card">
+        <ul>
+            <li>Lập kế hoạch và triển khai hoạt động truyền thông, sự kiện.</li>
+            <li>Quản trị cộng đồng trên các nền tảng social media.</li>
+            <li>Thành thạo Canva, CapCut,...</li>
+            <li>Cập nhật trends nhanh chóng.</li>
+            <li>Làm việc nhóm tốt, trách nhiệm cao, quản lý thời gian hiệu quả.</li>
+        </ul>
+    </div>
 </div>
 
 <!-- KINH NGHIỆM -->
@@ -169,7 +240,7 @@ footer {
     </div>
 
     <div class="card">
-        <h3>Thành viên Ban Tổ chức sự kiện chào tân sinh viên – FTU (2024)</h3>
+        <h3>Thành viên Ban Tổ chức sự kiện FTU (2024)</h3>
         <ul>
             <li>Lên ý tưởng concept và lập kế hoạch hoạt động chi tiết.</li>
             <li>Phối hợp tổ chức, điều phối hoạt động và quản lý hậu cần.</li>
@@ -180,7 +251,7 @@ footer {
     <div class="card">
         <h3>Leader tuyển thành viên Đoàn Thanh niên FTU (2024)</h3>
         <ul>
-            <li>Đề xuất ý tưởng, concept chương trình.</li>
+            <li>Đề xuất ý tưởng chủ đề, concept chương trình.</li>
             <li>Xây dựng nội dung truyền thông, seeding thu hút ứng viên.</li>
             <li>Nhận về hơn 600 đơn ứng tuyển.</li>
             <li>Điều phối các vòng tuyển chọn và hoạt động.</li>
@@ -188,36 +259,10 @@ footer {
     </div>
 </div>
 
-<!-- KỸ NĂNG -->
-<div class="section hidden" id="skills">
-    <h2>KỸ NĂNG</h2>
-
-    <div class="card">
-        <ul>
-            <li>Lập kế hoạch và triển khai hoạt động truyền thông, sự kiện.</li>
-            <li>Quản trị cộng đồng trên các nền tảng social media.</li>
-            <li>Thành thạo Canva, CapCut,...</li>
-            <li>Cập nhật trends nhanh chóng.</li>
-            <li>Làm việc nhóm tốt, trách nhiệm cao, quản lý thời gian hiệu quả.</li>
-        </ul>
-    </div>
-</div>
-
-<!-- HỌC VẤN -->
-<div class="section hidden">
-    <h2>HỌC VẤN</h2>
-
-    <div class="card">
-        <p><b>Trường Đại học Ngoại Thương (2023 - 2027)</b></p>
-        <p>Sinh viên năm 2 chuyên ngành Tiếng Trung Thương Mại.</p>
-    </div>
-</div>
-
 <footer>
     © 2026 Thanh Ngân
 </footer>
 
-<!-- JS ANIMATION -->
 <script>
 const elements = document.querySelectorAll('.hidden');
 
