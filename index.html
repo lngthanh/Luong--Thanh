@@ -14,7 +14,7 @@
 }
 
 body {
-    background: #fff5f5;
+    background: linear-gradient(135deg, #fff5f5, #ffecec);
 }
 
 /* NAVBAR */
@@ -69,67 +69,57 @@ nav a {
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
     color: #555;
 }
 
-/* SECTION TITLE */
-.title {
-    text-align: center;
-    margin: 80px 0 40px;
-}
-
-.title h2 {
-    font-size: 36px;
-    color: #c0392b;
-}
-
-.title span {
-    background: #e85d5d;
-    color: white;
-    padding: 5px 10px;
-}
-
-/* TIMELINE */
-.timeline {
+/* SECTION */
+.section {
     width: 80%;
-    margin: auto;
+    margin: 80px auto;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-.item:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.item img {
-    width: 45%;
-    border-radius: 10px;
-}
-
-.text {
-    width: 55%;
-    padding: 20px;
-}
-
-.text h3 {
+.section h2 {
     color: #c0392b;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
-.text p {
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* LIST */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
     color: #555;
 }
 
-/* HOVER EFFECT */
-.item:hover {
-    transform: scale(1.02);
-    transition: 0.3s;
+/* ANIMATION */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* FOOTER */
@@ -144,12 +134,12 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
     <h1>THANH NGÂN.</h1>
     <div>
-        <a href="#">Trang chủ</a>
-        <a href="#">Hành trình</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#exp">Kinh nghiệm</a>
+        <a href="#skills">Kỹ năng</a>
     </div>
 </nav>
 
@@ -159,48 +149,87 @@ footer {
     <h1>LƯƠNG NGÂN THANH</h1>
     <div class="highlight">SINH VIÊN FTU - MARKETING</div>
     <p>
-        Yêu thích sáng tạo nội dung, tổ chức sự kiện và xây dựng cộng đồng.
-        Mong muốn tạo ra giá trị thông qua truyền thông và chiến lược.
+        Mong muốn áp dụng kỹ năng tổ chức sự kiện, quản trị cộng đồng và sáng tạo nội dung 
+        để đóng góp vào việc nâng cao hình ảnh thương hiệu của công ty, tạo ra giá trị lâu dài 
+        và gắn kết khách hàng với thương hiệu thông qua các nền tảng social media.
     </p>
 </div>
 
-<!-- TITLE -->
-<div class="title">
-    <h2>HÀNH TRÌNH <span>KHÁM PHÁ</span></h2>
+<!-- KINH NGHIỆM -->
+<div class="section hidden" id="exp">
+    <h2>KINH NGHIỆM</h2>
+
+    <div class="card">
+        <h3>Quản trị Page CLB Tiếng Anh THPT Chuyên Hưng Yên (2022-2023)</h3>
+        <ul>
+            <li>Quản lý tương tác và xây dựng nội dung cho fanpage CLB.</li>
+            <li>Tăng tương tác, phát triển cộng đồng thông qua các bài đăng, seeding.</li>
+            <li>Các bài đăng đạt trung bình 5.000-8.000 lượt tiếp cận, 300-500 lượt reacts.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Thành viên Ban Tổ chức sự kiện chào tân sinh viên – FTU (2024)</h3>
+        <ul>
+            <li>Lên ý tưởng concept và lập kế hoạch hoạt động chi tiết.</li>
+            <li>Phối hợp tổ chức, điều phối hoạt động và quản lý hậu cần.</li>
+            <li>Quảng bá sự kiện thu hút gần 1000 sinh viên tham gia.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Leader tuyển thành viên Đoàn Thanh niên FTU (2024)</h3>
+        <ul>
+            <li>Đề xuất ý tưởng, concept chương trình.</li>
+            <li>Xây dựng nội dung truyền thông, seeding thu hút ứng viên.</li>
+            <li>Nhận về hơn 600 đơn ứng tuyển.</li>
+            <li>Điều phối các vòng tuyển chọn và hoạt động.</li>
+        </ul>
+    </div>
 </div>
 
-<!-- TIMELINE -->
-<div class="timeline">
+<!-- KỸ NĂNG -->
+<div class="section hidden" id="skills">
+    <h2>KỸ NĂNG</h2>
 
-    <div class="item">
-        <img src="https://via.placeholder.com/400">
-        <div class="text">
-            <h3>CLB Tiếng Anh (2022-2023)</h3>
-            <p>Quản lý fanpage, tăng tương tác, đạt 5.000 - 8.000 lượt tiếp cận.</p>
-        </div>
+    <div class="card">
+        <ul>
+            <li>Lập kế hoạch và triển khai hoạt động truyền thông, sự kiện.</li>
+            <li>Quản trị cộng đồng trên các nền tảng social media.</li>
+            <li>Thành thạo Canva, CapCut,...</li>
+            <li>Cập nhật trends nhanh chóng.</li>
+            <li>Làm việc nhóm tốt, trách nhiệm cao, quản lý thời gian hiệu quả.</li>
+        </ul>
     </div>
+</div>
 
-    <div class="item">
-        <img src="https://via.placeholder.com/400">
-        <div class="text">
-            <h3>Ban tổ chức FTU (2024)</h3>
-            <p>Tổ chức sự kiện, thu hút gần 1000 sinh viên.</p>
-        </div>
+<!-- HỌC VẤN -->
+<div class="section hidden">
+    <h2>HỌC VẤN</h2>
+
+    <div class="card">
+        <p><b>Trường Đại học Ngoại Thương (2023 - 2027)</b></p>
+        <p>Sinh viên năm 2 chuyên ngành Tiếng Trung Thương Mại.</p>
     </div>
-
-    <div class="item">
-        <img src="https://via.placeholder.com/400">
-        <div class="text">
-            <h3>Leader tuyển thành viên (2024)</h3>
-            <p>Đạt hơn 600 đơn ứng tuyển.</p>
-        </div>
-    </div>
-
 </div>
 
 <footer>
     © 2026 Thanh Ngân
 </footer>
+
+<!-- JS ANIMATION -->
+<script>
+const elements = document.querySelectorAll('.hidden');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
